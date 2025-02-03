@@ -106,9 +106,9 @@ create_docker_compose_file() {
     COMPOSE_FILE="${QPKG_PATH}/docker-compose.yml"
     cat > "$COMPOSE_FILE" <<EOF	
 services:
-  pyload-ng:
-    image: lscr.io/linuxserver/pyload-ng:0.5.0b3.dev87-ls171
-    container_name: pyload-ng
+  ${PACKAGE_NAME}:
+    image: ${DOCKER_IMAGE}
+    container_name: ${PACKAGE_NAME}
     restart: unless-stopped
     ports:
       - "8000:8000"
